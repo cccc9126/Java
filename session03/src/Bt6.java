@@ -14,7 +14,7 @@ public class Bt6 {
                 temp[k++] = a[i];
                 i++;
                 j++;
-            }git 
+            }
         }
 
         while (i < a.length) {
