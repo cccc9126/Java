@@ -11,9 +11,12 @@ public class BTTH {
         String title = sc.nextLine();
         String author = sc.nextLine();
 
-        validateISBN(isbn);
-        validateBookId(bookId);
-        validateYear(year);
+        System.out.println(validateBookId(bookId));
+        System.out.println(validateISBN(isbn));
+        System.out.println(validateYear(year));
+        System.out.println(formatText(title));
+        System.out.println(formatText(author));
+        System.out.println(buildFullInfo(bookId, formatText(title), formatText(author), year));
 
 
 
