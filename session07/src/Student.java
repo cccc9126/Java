@@ -37,7 +37,6 @@
             System.out.println("Mã SV: " + id);
             System.out.println("Tên SV: " + name);
             System.out.println("Trường: " + SCHOOL_NAME);
-            System.out.println("----------------------");
         }
 
         public static void showTotalStudent() {
@@ -49,9 +48,12 @@
             Student s2 = new Student("Kiên", 102);
             Student s3 = new Student("Hiếu", 103);
 
-            s1.displayInfo();
-            s2.displayInfo();
-            s3.displayInfo();
+           Student[] students = {
+                   s1,s2,s3
+           };
+           for(int i = 0; i < students.length; i++) {
+               students[i].displayInfo();
+           }
 
             Student.showTotalStudent();
         }

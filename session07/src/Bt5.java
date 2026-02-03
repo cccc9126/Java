@@ -14,6 +14,6 @@ public class Bt5 {
             System.out.println("Điểm không hợp lệ");
         }
 
-        Config.MAX_SCORE = 9.0;
+        //Config.MAX_SCORE = 9.0;
     }
 }
