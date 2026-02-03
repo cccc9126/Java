@@ -136,7 +136,9 @@ public class Main {
         System.out.println("Kết quả tìm kiếm:");
         for (int i = 0; i < current; i++) {
             if (students[i].getRank().equalsIgnoreCase(keyword)) {
-                System.out.println(students[i]);
+                System.out.printf("|%-10s|%-10s|%-10f|%-10s|\n",
+                        students[i].getId(),students[i].getName(),students[i].getScore(),students[i].getRank());
+
                 found = true;
             }
         }
