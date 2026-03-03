@@ -40,7 +40,7 @@ public class Main {
         System.out.println("Câu 4: ");
         Map<String, Integer> stats = productRepository.countByType();
         for (String key : stats.keySet()) {
-            Integer value = stats.get(key); 
+            Integer value = stats.get(key);
             System.out.println(key + ": " + value);
         }
 
