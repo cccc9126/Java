@@ -38,7 +38,7 @@ public class ProductRepository implements IRepository<Product> {
     public java.util.List<Product> findAll() {
         return new ArrayList<>(products);
     }
-    public List<Product> sortByPriceAsc() {
+    public List<Product> sortByPriceAsc () {
         List<Product> sorted = new ArrayList<>(products);
         Collections.sort(sorted, new Comparator<Product>() {
             @Override
@@ -50,6 +50,7 @@ public class ProductRepository implements IRepository<Product> {
     }
     public Map<String, Integer> countByType() {
         Map<String, Integer> result = new HashMap<>();
+
         for (Product p : products) {
             String type;
             if (p instanceof ElectronicProduct) {
@@ -60,10 +61,16 @@ public class ProductRepository implements IRepository<Product> {
                 type = "Other";
             }
 
-            int oldCount = result.getOrDefault(type, 0);
-            result.put(type, oldCount + 1);
+            if (result.containsKey(type)) {
+                int old = result.get(type);
+                result.put(type, old + 1);
+            } else {
+                result.put(type, 1);
+            }
         }
+
         return result;
     }
+
 
 }
