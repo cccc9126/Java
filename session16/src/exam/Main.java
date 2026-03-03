@@ -3,6 +3,7 @@ package exam;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -37,10 +38,12 @@ public class Main {
 
         System.out.println();
         System.out.println("Câu 4: ");
-        java.util.Map<String, Integer> stats = productRepository.countByType();
-        for (java.util.Map.Entry<String, Integer> entry : stats.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
+        Map<String, Integer> stats = productRepository.countByType();
+        for (String key : stats.keySet()) {
+            Integer value = stats.get(key); 
+            System.out.println(key + ": " + value);
         }
+
 
     }
 }
